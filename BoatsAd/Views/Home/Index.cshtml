@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">    
+    <div id="left-menu" class="col-lg-3" style="padding-left:0px;">
+        <div class="panel panel-default" style="border:none;">
+            <div class="panel-heading" style="padding-top:0px;"><h2 style="margin:0px;">Kategorie</h2></div>
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked" >
+                    <li>
+                        <a href="javaScript:void(0);">
+                            <span class="badge pull-right">42</span>
+                            Łodzie żaglowe
+                        </a>
+                    </li>
+                    <li><a href="javaScript:void(0);">Łodzie motorowodne</a></li>
+                    <li>
+                        <a href="javaScript:void(0);">
+                            <span class="badge pull-right">3</span>
+                            Silniki
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default" style="border:none;">
+            <div class="panel-heading"><h2 style="margin:0px;">Wyróżnione oferty</h2></div>
+            <div class="panel-body">
+                Wyróżnione ferty
+            </div>
+        </div>
+    </div>
+    <div id="middle-menu" class="col-lg-9">
+        <div id="SailBoatFilters" class="row" style="display:none;">
+            <h2 class="col-lg-12 page-header" style="margin-top:0px;">Łodzie żaglowe -> Dostępne Filtry</h2>
+            <div class="col-lg-2">
+                <select id="selectPrice" class="form-control">
+                    <option value=""></option>
+                    <option value="0-10000">0zł-10000zł</option>
+                    <option value="10000zł-20000zł">10000zł-20000zł</option>
+                    <option value="20000zł-50000zł">20000zł-50000zł</option>
+                    <option value="50000zł-100000zł">50000zł-100000zł</option>
+                    <option value="50000zł- *">50000zł- *</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <select id="selectLenght" class="form-control">
+                    <option value=""></option>
+                    <option value="0-10">0-5m</option>
+                    <option value="5-10">5-10m</option>
+                    <option value="10-15">10-15m</option>
+                    <option value="15-*">15-*</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <select id="selectBoatType" class="form-control">
+                    <option value=""></option>
+                    <option value="Balastowa">Balastowa</option>
+                    <option value="Mieczowa">Mieczowa</option>
+                    <option value="Balastowo - Mieczowa">Balastowo - Mieczowa</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <input id="productionYearFrom" class="form-control" placeholder="Rok produkcji od" style="height: 28px;"/>
+            </div>
+            <div class="col-lg-2">
+                <input id="productionYearTo" class="form-control" placeholder="Rok produkcji do" style="height: 28px;"/>
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Filtruj</button>
+            </div>
+        </div>
+        <div id="filters" class="row">
+            <h2 class="col-lg-12 page-header" style="margin-top:0px;">Łodzie motorowodne -> Dostępne Filtry</h2>
+            <div class="col-lg-2">
+                <select id="selectMotorBoatPrice" class="form-control">
+                    <option value=""></option>
+                    <option value="0-10000">0zł-10000zł</option>
+                    <option value="10000zł-20000zł">10000zł-20000zł</option>
+                    <option value="20000zł-50000zł">20000zł-50000zł</option>
+                    <option value="50000zł-100000zł">50000zł-100000zł</option>
+                    <option value="50000zł- *">50000zł- *</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <select id="selectMotorBoatLenght" class="form-control">
+                    <option value=""></option>
+                    <option value="0-5">0-5m</option>
+                    <option value="5-10">5-10m</option>
+                    <option value="10-15">10-15m</option>
+                    <option value="15-*">15-*</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <select id="selectMotorBoatPower" class="form-control">
+                    <option value=""></option>
+                    <option value="0-5">0-5hp</option>
+                    <option value="5-10">5-10hp</option>
+                    <option value="10-50">10-50hp</option>
+                    <option value="50-*">50-*</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <input id="productionYearFrom" class="form-control" placeholder="Rok produkcji od" style="height: 28px;" />
+            </div>
+            <div class="col-lg-2">
+                <input id="productionYearTo" class="form-control" placeholder="Rok produkcji do" style="height: 28px;" />
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Filtruj</button>
+            </div>
+        </div>
+
+        <div id="users" class="row">  
+            <div class="col-lg-12 page-header text-right" style="margin-top:0px;">
+                <button class="sort btn btn-default btn-sm" data-sort="name">
+                    Sortuj po nazwie
+                </button>
+                <button class="sort btn btn-default btn-sm" data-sort="price">
+                    Sortuj po cenie
+                </button>
+            </div>        
+            
+            <table class="col-lg-12">
+                <tbody class="list">
+                    <tr style="border: 1px solid #ddd; padding-bottom:10px;">
+                        <td class="col-lg-1">
+                            <a class="pull-left" href="javaScript:void(0);">
+                            <img class="media-object" alt="125x125" src="https://olxpl-ring05.akamaized.net/images_tablicapl/454150335_1_261x203_jacht-zaglowy-balastowy-morski-albin-vega-28-police.jpg" style="width: 125px; height: 125px;">
+                        </a></td>
+                        <td class="col-lg-11">
+                            <div class="media-body">
+                                <div class="name">
+                                    <h2 class="media-heading">Tytuł przedmiotu</h2>
+                                </div>
+                                <div class="price">
+                                    150245$ opis przedmiotu
+                                </div>
+                                </div>
+                        </td>
+                    </tr>
+                    <tr style="border: 1px solid #ddd; padding-bottom: 10px;">
+                        <td class="col-lg-1">
+                            <a class="pull-left" href="javaScript:void(0);">
+                                <img class="media-object" data-src="holder.js/64x64" alt="125x125" src="https://olxpl-ring10.akamaized.net/images_tablicapl/420167247_1_261x203_jacht-typu-mors-rt-zaglowka-lebork.jpg" style="width: 125px; height: 125px;">
+                            </a>
+                        </td>
+                        <td class="col-lg-11">
+                            <div class="media-body">
+                                <div class="name">
+                                    <h2 class="media-heading">Benateau</h2>
+                                </div>
+                                <div class="price">
+                                    150246$ opis przedmiotu
+                                </div>
+                            </div>
+                        </td>                     
+                    </tr>
+                    <tr style="border: 1px solid #ddd; padding-bottom:10px;">
+                        <td class="col-lg-1">
+                            <a class="pull-left" href="javaScript:void(0);">
+                                <img class="media-object" data-src="holder.js/64x64" alt="125x125" src="https://olxpl-ring12.akamaized.net/images_tablicapl/214303445_4_1000x700_czarter-jachtu-tango-780-family-jeziorak-sport-i-hobby_rev007.jpg" style="width: 125px; height: 125px;">
+                            </a>
+                        </td>
+                        <td class="col-lg-11">
+                            <div class="media-body">
+                                <div class="name">
+                                    <h2 class="media-heading">Elan</h2>
+                                </div>                                
+                                <div class="price">
+                                    100999$ opis przedmiotu
+                                </div>
+                            </div>
+                            @*<div class=" row">
+                                <h2>Elan</h2>
+                            </div>
+                            <div class="price row">
+                                
+                            </div>*@
+                        </td>                          
+                    </tr>                  
+                </tbody>
+            </table>
+
+        </div>   
+    </div>
+</div>
+
+<div class="modal fade" id="RegisterModal" role="dialog">
+    <div class="modal-dialog">     
+            <div class="form">
+                <ul class="tab-group">
+                    <li class="tab active"><a href="#login">Log In</a></li>
+                    <li class="tab"><a href="#signup">Sign Up</a></li>
+                    
+                </ul>
+                <div class="tab-content">
+                    <div id="login">
+                        <h1>Welcome Back!</h1>
+                        <form action="/" method="post">
+                            <div class="field-wrap">
+                                <label>
+                                    Email Address<span class="req">*</span>
+                                </label>
+                                <input type="email" required autocomplete="off" />
+                            </div>
+                            <div class="field-wrap">
+                                <label>
+                                    Password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" />
+                            </div>
+                            <p class="forgot"><a href="#">Forgot Password?</a></p>
+                            <button class="button button-block">Log In</button>
+
+                        </form>
+                    </div>
+                    <div id="signup">
+                        <h1>Sign Up for Free</h1>
+
+                        <form action="/" method="post">
+
+                            <div class="top-row">
+                                <div class="field-wrap">
+                                    <label>
+                                        First Name<span class="req">*</span>
+                                    </label>
+                                    <input type="text" required autocomplete="off" />
+                                </div>
+
+                                <div class="field-wrap">
+                                    <label>
+                                        Last Name<span class="req">*</span>
+                                    </label>
+                                    <input type="text" required autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="field-wrap">
+                                <label>
+                                    Email Address<span class="req">*</span>
+                                </label>
+                                <input type="email" required autocomplete="off" />
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>
+                                    Set A Password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" />
+                            </div>
+
+                            <button type="submit" class="button button-block" />Get Started</button>
+
+                        </form>
+                    </div>
+
+                    
+
+                </div><!-- tab-content -->
+
+        </div>
+
+    </div>
+</div>

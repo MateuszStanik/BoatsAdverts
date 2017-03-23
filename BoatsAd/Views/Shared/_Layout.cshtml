@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/fuelux.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/fuelux-mctheme.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/media.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/select2.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/list.js"></script>
+    <script src="~/Scripts/knockout-3.4.2.js"></script>
+    <script src="~/Scripts/select2.js"></script>
+    <script src="~/Scripts/App.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <nav id="menu" class="navbar navbar-default">
+            <div class="navbar-form navbar-left" role="search" style="margin-top: 12px;"><div class="container-fluid" >
+            @Html.ActionLink("Boats Adverts", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "padding-top: 5px;"})
+            <div class="input-group input-group-md col-lg-4">
+                <!-- Input -->
+               
+                <input type="text" name="search" class="form-control search" placeholder="Wyszukaj przedmiot..." />
+
+                <!-- Dropdown -->
+                <div class="input-group-btn" >
+                    <button type="button" class="btn btn-default" data-toggle="dropdown">Kategorie...<span class="caret"></span></button>
+                    <ul class="dropdown-menu pull-left" role="menu">
+                        <li><a href="#">Łodzie żaglowe</a></li>
+                        <li><a href="#">Łodzie motorowe</a></li>
+                        <li><a href="#">Silniki</a></li>
+                    </ul>
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </div>  
+            </div>
+                <div class="navbar-form navbar-right" style="margin-top: 2px;">
+                    <button type="button" class="btn btn-primary btn-create btn-lg">Dodaj ogłoszenie</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#RegisterModal">Zaloguj</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#RegisterModal">Zarejestruj</button>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Boats Application</p>
+            </footer>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+    <script>
+        ko.applyBindings(new AppViewModel());
+    </script>
+</body>
+</html>
