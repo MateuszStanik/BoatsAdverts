@@ -10,9 +10,12 @@
     <link href="~/Content/fuelux-mctheme.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/media.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/select2.css" rel="stylesheet" type="text/css" />
-
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/ProductMenu.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/login.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/GridView.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/bulma.css" rel="stylesheet" type="text/css" />*@
+    
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -20,7 +23,7 @@
     <script src="~/Scripts/knockout-3.4.2.js"></script>
     <script src="~/Scripts/select2.js"></script>
     <script src="~/Scripts/App.js"></script>
-    
+    @*<script src="~/Scripts/bulma.js"></script>*@
 </head>
 <body>
     <div class="container">
@@ -36,7 +39,10 @@
                 <div class="input-group-btn" >
                     <button type="button" class="btn btn-default" data-toggle="dropdown">Kategorie...<span class="caret"></span></button>
                     <ul class="dropdown-menu pull-left" role="menu">
-                        <li><a href="#">Łodzie żaglowe</a></li>
+                        <li>
+                            <a href="#">Łodzie żaglowe</a>
+                           
+                        </li>
                         <li><a href="#">Łodzie motorowe</a></li>
                         <li><a href="#">Silniki</a></li>
                     </ul>
@@ -55,14 +61,28 @@
         <div class="body-content">
             @RenderBody()
             <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Boats Application</p>
+            <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        
+                            <strong>BoatsAd</strong> by <a href="http://jgthms.com">Mateusz Stanik</a>.
+                        <p>&copy; @DateTime.Now.Year - Boats Application</p>
+                    
+                        <p>
+                            <a class="icon" href="https://github.com/jgthms/bulma">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </footer>
         </div>
     </div>
-
+    @Html.Partial("_Login")
     @RenderSection("scripts", required: false)
-    <script>
+
+        <script type="text/javascript">
+
         ko.applyBindings(new AppViewModel());
     </script>
 </body>

@@ -1,0 +1,81 @@
+﻿@* Sail-Boat filters *@
+<div id="SailBoatFilters" class="row" >
+    <h2 class="col-lg-12 page-header" style="margin-top:0px;">Łodzie żaglowe -> Dostępne Filtry</h2>
+    <div class="col-lg-2">
+        <select id="selectPrice" class="form-control">
+            <option value=""></option>
+            <option value="0-10000">0zł-10000zł</option>
+            <option value="10000zł-20000zł">10000zł-20000zł</option>
+            <option value="20000zł-50000zł">20000zł-50000zł</option>
+            <option value="50000zł-100000zł">50000zł-100000zł</option>
+            <option value="50000zł- *">50000zł- *</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <select id="selectLenght" class="form-control">
+            <option value=""></option>
+            <option value="0-10">0-5m</option>
+            <option value="5-10">5-10m</option>
+            <option value="10-15">10-15m</option>
+            <option value="15-*">15-*</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <select id="selectBoatType" class="form-control">
+            <option value=""></option>
+            <option value="Balastowa">Balastowa</option>
+            <option value="Mieczowa">Mieczowa</option>
+            <option value="Balastowo - Mieczowa">Balastowo - Mieczowa</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <input id="productionYearFrom" class="form-control" placeholder="Rok produkcji od" style="height: 28px;" />
+    </div>
+    <div class="col-lg-2">
+        <input id="productionYearTo" class="form-control" placeholder="Rok produkcji do" style="height: 28px;" />
+    </div>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Filtruj</button>
+    </div>
+</div>
+@* Motor-Boat filters *@
+<div id="filters" class="row" style="display:none;">
+    <h2 class="col-lg-12 page-header" style="margin-top:0px;">Łodzie motorowodne -> Dostępne Filtry</h2>
+    <div class="col-lg-2">
+        <select id="selectMotorBoatPrice" class="form-control">
+            <option value=""></option>
+            <option value="0-10000">0zł-10000zł</option>
+            <option value="10000zł-20000zł">10000zł-20000zł</option>
+            <option value="20000zł-50000zł">20000zł-50000zł</option>
+            <option value="50000zł-100000zł">50000zł-100000zł</option>
+            <option value="50000zł- *">50000zł- *</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <select id="selectMotorBoatLenght" class="form-control">
+            <option value=""></option>
+            <option value="0-5">0-5m</option>
+            <option value="5-10">5-10m</option>
+            <option value="10-15">10-15m</option>
+            <option value="15-*">15-*</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <select id="selectMotorBoatPower" class="form-control">
+            <option value=""></option>
+            <option value="0-5">0-5hp</option>
+            <option value="5-10">5-10hp</option>
+            <option value="10-50">10-50hp</option>
+            <option value="50-*">50-*</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <input id="productionYearFrom" class="form-control" placeholder="Rok produkcji od" style="height: 28px;" />
+    </div>
+    <div class="col-lg-2">
+        <input id="productionYearTo" class="form-control" placeholder="Rok produkcji do" style="height: 28px;" />
+    </div>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Filtruj</button>
+    </div>
+</div>
