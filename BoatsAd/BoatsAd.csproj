@@ -168,6 +168,7 @@
     <Content Include="Scripts\fuelux.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\js\Login.js" />
     <Content Include="Scripts\knockout-3.4.2.debug.js" />
     <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Scripts\list.js" />
@@ -184,17 +185,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdvertsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703272135259_init.cs" />
-    <Compile Include="Migrations\201703272135259_init.Designer.cs">
-      <DependentUpon>201703272135259_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\TextContext.cs" />
-    <Compile Include="Models\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,11 +203,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Tests\Create.cshtml" />
-    <Content Include="Views\Tests\Delete.cshtml" />
-    <Content Include="Views\Tests\Details.cshtml" />
-    <Content Include="Views\Tests\Edit.cshtml" />
-    <Content Include="Views\Tests\Index.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\_Filters.cshtml" />
     <Content Include="Views\Adverts\ProductList.cshtml" />
@@ -227,11 +215,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703272135259_init.resx">
-      <DependentUpon>201703272135259_init.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Models\DomainModel.csproj">
+      <Project>{4683db3d-f9d9-47c4-9394-026b259dc636}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitOfWork\UnitOfWork.csproj">
+      <Project>{1e237064-842b-4fca-85d6-ee1a03177612}</Project>
+      <Name>UnitOfWork</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

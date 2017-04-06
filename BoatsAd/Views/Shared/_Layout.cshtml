@@ -31,10 +31,8 @@
             <div class="navbar-form navbar-left" role="search" style="margin-top: 12px;"><div class="container-fluid" >
             @Html.ActionLink("Boats Adverts", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "padding-top: 5px;"})
             <div class="input-group input-group-md col-lg-4">
-                <!-- Input -->
-               
+                <!-- Input -->               
                 <input type="text" name="search" class="form-control search" placeholder="Wyszukaj przedmiot..." />
-
                 <!-- Dropdown -->
                 <div class="input-group-btn" >
                     <button type="button" class="btn btn-default" data-toggle="dropdown">Kategorie...<span class="caret"></span></button>
@@ -56,18 +54,15 @@
                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#RegisterModal">Zarejestruj</button>
                 </div>
             </div>
-        </nav>
-        
+        </nav>        
         <div class="body-content">
             @RenderBody()
             <hr />
             <footer class="footer">
                 <div class="container">
-                    <div class="content has-text-centered">
-                        
-                            <strong>BoatsAd</strong> by <a href="http://jgthms.com">Mateusz Stanik</a>.
-                        <p>&copy; @DateTime.Now.Year - Boats Application</p>
-                    
+                    <div class="content has-text-centered">                        
+                        <strong>BoatsAd</strong> by <a href="http://jgthms.com">Mateusz Stanik</a>.
+                        <p>&copy; @DateTime.Now.Year - Boats Application</p>                    
                         <p>
                             <a class="icon" href="https://github.com/jgthms/bulma">
                                 <i class="fa fa-github"></i>
@@ -80,9 +75,7 @@
     </div>
     @Html.Partial("_Login")
     @RenderSection("scripts", required: false)
-
-        <script type="text/javascript">
-
+    <script type="text/javascript">
         ko.applyBindings(new AppViewModel());
     </script>
 </body>

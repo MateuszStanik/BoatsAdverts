@@ -1,4 +1,5 @@
-﻿<div class="modal fade" id="RegisterModal" role="dialog">
+﻿<script src="~/Scripts/js/Login.js"></script>
+<div class="modal fade" id="RegisterModal" role="dialog">
     <div class="modal-dialog">
         <div class="form">
             <ul class="tab-group">
@@ -23,7 +24,7 @@
                             <input type="password" required autocomplete="off" />
                         </div>
                         <p class="forgot"><a href="#">Zapomniałeś/aś hasła?</a></p>
-                        <button class="button button-block">Zaloguj się</button>
+                        <button class="button button-block" data-bind="click: Alert">Zaloguj się</button>
                     </form>
                 </div>
                 <div id="signup">
@@ -66,3 +67,8 @@
     </div>
 </div>
 
+
+<script>
+        var vm = new ViewModel();
+        ko.applyBindings(vm);
+</script>
